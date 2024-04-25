@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $db->query($query, $params);
 
-    $_SESSION['message'] = "Product added successfully!";
 
     header("Location: {$_SERVER['HTTP_REFERER']}");
 
