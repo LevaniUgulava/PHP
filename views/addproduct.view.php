@@ -19,13 +19,7 @@
 
     <h1>Product Add</h1>
     <button class="delete-button" onclick="window.location.href='/addproduct'">Cancel</button>
-    <?php
-    session_start();
-    if (isset($_SESSION['message'])) {
-        echo '<div class="session-message"><p>' . $_SESSION['message'] . '</p></div>';
-        unset($_SESSION['message']); // Clear the message after displaying it
-    }
-    ?>
+  
 
     <form id="product_form" method="post" action="/Controllers/addproduct.php">
         <label for="sku">SKU:</label>
