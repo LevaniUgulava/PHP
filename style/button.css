@@ -1,7 +1,8 @@
 .add-button {
+    height: 40px;
     position: fixed;
     top: 10px;
-    right: 10px;
+    right: 140px;
     z-index: 1000;
     padding: 10px;
     background-color: #007bff;
@@ -16,9 +17,10 @@
 }
 
 .delete-button {
+    height: 40px;
     position: fixed;
     top: 10px;
-    right: 130px;
+    right: 10px;
     z-index: 1000;
     padding: 10px;
     background-color: #e70b21;
