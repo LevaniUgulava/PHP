@@ -15,11 +15,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Check out the repository code
     - uses: actions/checkout@v4
 
+    # Step 2: Validate composer.json and composer.lock syntax
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
+    # Step 3: Cache Composer packages to speed up the workflow
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v3
@@ -29,11 +32,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
+    # Step 4: Install dependencies
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
+    # Step 5: Run tests (uncomment and customize if tests are available)
     # - name: Run test suite
     #   run: composer run-script test
