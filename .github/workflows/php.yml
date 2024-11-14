@@ -1,0 +1,36 @@
+name: PHP CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository code
+    - uses: actions/checkout@v4
+
+    # Step 2: Set up PHP (optional if specific PHP version is needed)
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0' # Change to the version you need
+
+    # Step 3: Run Linting (if applicable)
+    - name: Run PHP lint
+      run: php -l index.php # Adjust to lint all PHP files if needed
+
+    # Step 4: Run Tests (if you have a test suite)
+    # Replace `phpunit` with your specific testing command if you have one
+    # Uncomment and edit the following lines if you have tests to run:
+    # - name: Run Tests
+    #   run: php path/to/your-test-file.php
+
